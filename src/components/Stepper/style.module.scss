@@ -84,9 +84,12 @@
           letter-spacing: 0.05em;
           padding: 10px 20px;
           background: rgba(196, 196, 196, 0.4);
-          border: none;
+          border: 1px solid rgba(196, 196, 196, 0.4);
           border-radius: 50px;
-          cursor: pointer;
+
+          &:hover {
+            border-color: #232b2f;
+          }
         }
       }
     }

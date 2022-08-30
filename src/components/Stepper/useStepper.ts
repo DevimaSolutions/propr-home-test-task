@@ -2,11 +2,11 @@ import { Step } from "@/enums";
 import { useCallback, useState } from "react";
 
 const useStepper = () => {
-  const [step, setStep] = useState(Step.SellingSpeed);
+  const [step, setStep] = useState(Step.First);
 
   const handleStepChange = useCallback(
     (newStep: number) => {
-      if (newStep < Step.SellingSpeed || newStep > Step.StepFourth) {
+      if (newStep < Step.First || newStep > Step.Fourth) {
         return;
       }
       setStep(newStep);

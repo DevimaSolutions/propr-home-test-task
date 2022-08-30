@@ -8,7 +8,7 @@ const useStepWizard = ({ currentStep }: Pick<IStepWizard, "currentStep">) => {
   const countOfSteps = Object.keys(Step)
     .filter((v) => !isNaN(Number(v)))
     .map((el) => Number(el)).length;
-    
+
   useMemo(() => {
     const percentage = ((currentStep - 1) * 100) / (countOfSteps - 1);
 

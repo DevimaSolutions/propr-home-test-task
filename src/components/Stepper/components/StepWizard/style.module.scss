@@ -26,13 +26,6 @@
     border-radius: 10px;
     cursor: pointer;
     padding: 10px 20px;
-    transition: all 0.1s ease-in-out;
-  }
-
-  .disabledButton {
-    color: #999999;
-    background: rgba(196, 196, 196, 0.4);
-    cursor: default;
   }
 
   .navigationWrapper {
@@ -49,15 +42,46 @@
       }
 
       &:hover {
-        background-color: rgba(196, 196, 196, 0.2);
+        color: $green-light;
+
+        img {
+          filter: invert(54%) sepia(91%) saturate(1105%) hue-rotate(115deg)
+            brightness(96%) contrast(101%);
+        }
       }
     }
 
     .nextButton {
       color: $white;
       background-color: $green-light;
+      border: 1px solid $green-light;
+
       .buttonTitle {
         margin-right: 6px;
+      }
+
+      &:hover {
+        color: $green-light;
+        background-color: rgba(0, 209, 136, 0.2);
+
+        img {
+          filter: invert(54%) sepia(91%) saturate(1105%) hue-rotate(115deg)
+            brightness(96%) contrast(101%);
+        }
+      }
+    }
+
+    .disabledButton,
+    .disabledButton:hover {
+      color: #999999;
+      background-color: rgba(196, 196, 196, 0.4);
+      border: none;
+      cursor: default;
+
+      img {
+        filter: invert(71%) sepia(0%) saturate(166%) hue-rotate(136deg)
+          brightness(85%) contrast(92%);
+        opacity: 0.5;
       }
     }
 
