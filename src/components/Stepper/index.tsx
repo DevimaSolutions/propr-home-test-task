@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { stepInfo } from "./constants";
 import useStepper from "./useStepper";
+import StepWizard from './components';
 import styles from "./style.module.scss";
 
 const Stepper = () => {
@@ -34,7 +35,16 @@ const Stepper = () => {
           </div>
         </div>
       </div>
-      <div className={styles.contentWrapper}></div>
+      <div className={styles.contentWrapper}>
+        <div className={styles.topContent}>
+          <div className={styles.exitWrap}>
+          <button className={styles.exitButton}>
+            Exit
+          </button>
+          </div>
+        </div>
+        <StepWizard currentStep={step} handleStepChange={handleStepChange}/>
+      </div>
     </div>
   );
 };

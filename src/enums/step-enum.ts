@@ -1,5 +1,5 @@
 export enum Step {
-    SellingSpeed,
+    SellingSpeed = 1,
     Location,
     Worth,
     StepFourth,

@@ -1,0 +1,76 @@
+@import "@/styles/variables";
+@import "@/styles/config";
+
+.root {
+  .progressBar {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #ededed;
+    overflow: hidden;
+
+    .filledBar {
+      height: 100%;
+      background-color: $green-base;
+      transition: width 0.5s ease-in-out;
+    }
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: all 0.1s ease-in-out;
+  }
+
+  .disabledButton {
+    color: #999999;
+    background: rgba(196, 196, 196, 0.4);
+    cursor: default;
+  }
+
+  .navigationWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 33px;
+
+    .backButton {
+      color: #767676;
+      background-color: transparent;
+      .buttonTitle {
+        margin-left: 6px;
+      }
+
+      &:hover {
+        background-color: rgba(196, 196, 196, 0.2);
+      }
+    }
+
+    .nextButton {
+      color: $white;
+      background-color: $green-light;
+      .buttonTitle {
+        margin-right: 6px;
+      }
+    }
+
+    .stepCounter {
+      color: $green-light;
+      font-weight: 300;
+      margin-right: 30px;
+    }
+
+    .nextWrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

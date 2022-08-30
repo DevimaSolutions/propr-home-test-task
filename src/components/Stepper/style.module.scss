@@ -57,8 +57,39 @@
   }
 
   .contentWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 50%;
+    padding: 30px 40px;
     background-color: $white;
+
+    .topContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .exitWrap {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 8px;
+
+        .exitButton {
+          color: #232b2f;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 17px;
+          letter-spacing: 0.05em;
+          padding: 10px 20px;
+          background: rgba(196, 196, 196, 0.4);
+          border: none;
+          border-radius: 50px;
+          cursor: pointer;
+        }
+      }
+    }
   }
 }
 
