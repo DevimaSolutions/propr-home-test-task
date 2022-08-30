@@ -1,0 +1,75 @@
+@import "@/styles/variables";
+@import "@/styles/config";
+
+.root {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background-color: $white;
+
+  .infoWrapper {
+    width: 50%;
+    min-height: 100%;
+    padding: 27px 44px;
+    background-color: $yellow-main;
+
+    .iconWrapper {
+      width: 100%;
+    }
+
+    .mainInfoWrap {
+      width: 100%;
+      height: calc(100% - 52px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .typographyWrap {
+        .title {
+          margin: 0;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 23px;
+          text-align: center;
+          letter-spacing: 0.05em;
+          color: #232b2f;
+        }
+
+        .stepTitle {
+          margin: 0;
+          margin-top: 14px;
+          font-weight: 300;
+          font-size: 46px;
+          line-height: 56px;
+          text-align: center;
+          color: #232b2f;
+          max-width: 549px;
+        }
+      }
+
+      .mainImageWrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  .contentWrapper {
+    width: 50%;
+    background-color: $white;
+  }
+}
+
+@include down(md) {
+  .root {
+    .infoWrapper {
+      display: none;
+    }
+
+    .contentWrapper {
+      width: 100%;
+    }
+  }
+}
