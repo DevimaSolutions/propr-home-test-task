@@ -14,7 +14,7 @@ export const staticOptions = [
 export const selectStyles: StylesConfig = {
   control: (provided, state) => ({
     ...provided,
-    padding: "30px 25px",
+    padding: "24px 25px",
     borderColor: state.isFocused ? "#7A8083" : "#C4C4C4",
     boxShadow: "none",
     borderRadius: "10px",

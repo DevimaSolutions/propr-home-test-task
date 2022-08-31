@@ -57,6 +57,16 @@
       height: 50px;
     }
   }
+
+  .buttonActive {
+    border: 1px solid $green-light;
+
+    .innerWrapper {
+      .iconWrapper {
+        background-color: rgba(0, 209, 136, 0.55);
+      }
+    }
+  }
 }
 
 @include up(md) {

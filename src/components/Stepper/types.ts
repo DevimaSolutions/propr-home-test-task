@@ -2,8 +2,10 @@ import { Step } from "@/enums";
 import { ComponentType } from "react";
 
 export interface IStepConfigComponentProps {
-  step?: Step;
-  handleStepChange?: (newStep: number) => void;
+  step: Step;
+  value: string;
+  handleStepChange: (newStep: number) => void;
+  handleSetData: (step: Step, value: string) => void;
 }
 
 export interface IStepConfig {
