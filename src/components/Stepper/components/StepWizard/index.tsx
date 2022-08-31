@@ -4,6 +4,7 @@ import styles from "./style.module.scss";
 import { IStepWizard } from "./types";
 import clsx from "clsx";
 import { Step } from "@/enums";
+import { hiddenNextButtonSteps } from "./constants";
 
 const StepWizard = ({
   currentStep,
@@ -29,7 +30,7 @@ const StepWizard = ({
           <div className={styles.stepCounter}>
             step {currentStep}/{countOfSteps}
           </div>
-          {![Step.First].includes(currentStep) && (
+          {!hiddenNextButtonSteps.includes(currentStep) && (
             <button
               className={clsx(
                 styles.button,
