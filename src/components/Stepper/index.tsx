@@ -1,8 +1,28 @@
+import React from 'react';
 import Image from "next/image";
-import { stepInfo } from "./constants";
+import { Step } from "@/enums";
+import {StepWizard, LocationSelect} from "./components";
 import useStepper from "./useStepper";
-import StepWizard from './components';
 import styles from "./style.module.scss";
+
+const stepInfo = {
+  [Step.First]: {
+    title: "Let’s start with the selling speed",
+    label: "How fast are you planning to sell?",
+    component: <></>,
+  },
+  [Step.Second]: {
+    title: "Tell us the location please",
+    label: "What is the address of the property you want to sell, please.",
+    component: <LocationSelect />,
+  },
+  [Step.Third]: {
+    title: "What’s your property worth?",
+    label: "What price do you think your property will sell for?",
+    component: <></>,
+  },
+  [Step.Fourth]: { title: "Question 4", label: "Question 4", component: <></> },
+};
 
 const Stepper = () => {
   const { step, handleStepChange } = useStepper();
@@ -23,7 +43,7 @@ const Stepper = () => {
             <h6 className={styles.title}>
               Find the best agent to sell your property
             </h6>
-            <h3 className={styles.stepTitle}>{stepInfo[step]}</h3>
+            <h3 className={styles.stepTitle}>{stepInfo[step].title}</h3>
           </div>
           <div className={styles.mainImageWrapper}>
             <Image
@@ -38,12 +58,14 @@ const Stepper = () => {
       <div className={styles.contentWrapper}>
         <div className={styles.topContent}>
           <div className={styles.exitWrap}>
-          <button className={styles.exitButton}>
-            Exit
-          </button>
+            <button className={styles.exitButton}>Exit</button>
           </div>
         </div>
-        <StepWizard currentStep={step} handleStepChange={handleStepChange}/>
+        <div className={styles.stepContent}>
+          <h4 className={styles.infoTitle}>{stepInfo[step].label}</h4>
+          <div className={styles.content}>{stepInfo[step].component}</div>
+        </div>
+        <StepWizard currentStep={step} handleStepChange={handleStepChange} />
       </div>
     </div>
   );
