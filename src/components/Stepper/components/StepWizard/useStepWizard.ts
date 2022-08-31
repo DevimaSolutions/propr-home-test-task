@@ -10,7 +10,11 @@ const useStepWizard = ({ currentStep }: Pick<IStepWizard, "currentStep">) => {
     .map((el) => Number(el)).length;
 
   useMemo(() => {
-    const percentage = ((currentStep - 1) * 100) / (countOfSteps - 1);
+    if (currentStep === Step.First) {
+      setFillWidth(100 / countOfSteps / 2);
+      return;
+    }
+    const percentage = ((currentStep - 1) * 100) / countOfSteps;
 
     setFillWidth(percentage);
   }, [countOfSteps, currentStep]);

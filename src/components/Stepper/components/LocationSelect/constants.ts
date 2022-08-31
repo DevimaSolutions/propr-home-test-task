@@ -69,7 +69,10 @@ export const selectStyles: StylesConfig = {
     backgroundColor: state.isSelected
       ? "rgba(196, 196, 196, 0.2)"
       : "transparent",
-    borderBottom: "1px solid #C4C4C4",
+
+    ":not(:last-child)": {
+      borderBottom: "1px solid #C4C4C4",
+    },
 
     ":hover": {
       backgroundColor: "rgba(196, 196, 196, 0.2)",

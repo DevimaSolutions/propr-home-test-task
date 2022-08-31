@@ -37,8 +37,13 @@
     .backButton {
       color: #767676;
       background-color: transparent;
+
       .buttonTitle {
         margin-left: 6px;
+      }
+
+      img {
+        min-width: 8px;
       }
 
       &:hover {
@@ -58,6 +63,10 @@
 
       .buttonTitle {
         margin-right: 6px;
+      }
+
+      img {
+        min-width: 9px;
       }
 
       &:hover {
@@ -95,6 +104,16 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+    }
+  }
+}
+
+@include down(md) {
+  .root {
+    .navigationWrapper {
+      .stepCounter {
+        margin-right: 10px;
+      }
     }
   }
 }
