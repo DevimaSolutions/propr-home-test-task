@@ -1,31 +1,31 @@
-import React from 'react';
+import React from "react";
 import Image from "next/image";
 import { Step } from "@/enums";
-import {StepWizard, LocationSelect} from "./components";
+import { StepWizard, LocationSelect } from "./components";
+import { IStepConfig } from "./types";
 import useStepper from "./useStepper";
 import styles from "./style.module.scss";
 
-const stepInfo = {
+const stepInfo: Record<Step, IStepConfig> = {
   [Step.First]: {
     title: "Let’s start with the selling speed",
     label: "How fast are you planning to sell?",
-    component: <></>,
   },
   [Step.Second]: {
     title: "Tell us the location please",
     label: "What is the address of the property you want to sell, please.",
-    component: <LocationSelect />,
+    component: LocationSelect,
   },
   [Step.Third]: {
     title: "What’s your property worth?",
     label: "What price do you think your property will sell for?",
-    component: <></>,
   },
-  [Step.Fourth]: { title: "Question 4", label: "Question 4", component: <></> },
+  [Step.Fourth]: { title: "Question 4", label: "Question 4" },
 };
 
 const Stepper = () => {
   const { step, handleStepChange } = useStepper();
+  const ContentComponent = stepInfo[step].component;
 
   return (
     <div className={styles.root}>
@@ -63,7 +63,9 @@ const Stepper = () => {
         </div>
         <div className={styles.stepContent}>
           <h4 className={styles.infoTitle}>{stepInfo[step].label}</h4>
-          <div className={styles.content}>{stepInfo[step].component}</div>
+          <div className={styles.content}>
+            {ContentComponent && <ContentComponent step={step} />}
+          </div>
         </div>
         <StepWizard currentStep={step} handleStepChange={handleStepChange} />
       </div>
