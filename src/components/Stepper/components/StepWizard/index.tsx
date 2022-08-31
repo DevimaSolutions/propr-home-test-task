@@ -3,6 +3,7 @@ import useStepWizard from "./useStepWizard";
 import styles from "./style.module.scss";
 import { IStepWizard } from "./types";
 import clsx from "clsx";
+import { Step } from "@/enums";
 
 const StepWizard = ({
   currentStep,
@@ -28,23 +29,25 @@ const StepWizard = ({
           <div className={styles.stepCounter}>
             step {currentStep}/{countOfSteps}
           </div>
-          <button
-            className={clsx(
-              styles.button,
-              styles.nextButton,
-              disableNextBtn && styles.disabledButton
-            )}
-            onClick={() => handleStepChange(currentStep + 1)}
-            disabled={!!disableNextBtn}
-          >
-            <span className={styles.buttonTitle}>Next</span>
-            <Image
-              src="/images/next-icon.svg"
-              width={9}
-              height={15}
-              alt="next"
-            />
-          </button>
+          {![Step.First].includes(currentStep) && (
+            <button
+              className={clsx(
+                styles.button,
+                styles.nextButton,
+                disableNextBtn && styles.disabledButton
+              )}
+              onClick={() => handleStepChange(currentStep + 1)}
+              disabled={!!disableNextBtn}
+            >
+              <span className={styles.buttonTitle}>Next</span>
+              <Image
+                src="/images/next-icon.svg"
+                width={9}
+                height={15}
+                alt="next"
+              />
+            </button>
+          )}
         </div>
       </div>
     </div>

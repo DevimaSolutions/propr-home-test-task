@@ -1,16 +1,16 @@
 import React from "react";
 import Image from "next/image";
 import { Step } from "@/enums";
-import { StepWizard, LocationSelect } from "./components";
+import { StepWizard, LocationSelect, OptionsStep } from "./components";
 import { IStepConfig } from "./types";
 import useStepper from "./useStepper";
 import styles from "./style.module.scss";
-import OptionsStep from "../OptionsStep";
 
 const stepInfo: Record<Step, IStepConfig> = {
   [Step.First]: {
     title: "Let’s start with the selling speed",
     label: "How fast are you planning to sell?",
+    component: OptionsStep,
   },
   [Step.Second]: {
     title: "Tell us the location please",
@@ -65,7 +65,7 @@ const Stepper = () => {
         <div className={styles.stepContent}>
           <h4 className={styles.infoTitle}>{stepInfo[step].label}</h4>
           <div className={styles.content}>
-            {ContentComponent && <ContentComponent step={step} />}
+            {ContentComponent && <ContentComponent step={step} handleStepChange={handleStepChange}/>}
           </div>
         </div>
         <StepWizard currentStep={step} handleStepChange={handleStepChange} />

@@ -1,6 +1,7 @@
+import { Step } from "@/enums";
 import Image from "next/image";
 import styles from "./style.module.scss";
-import { IOption } from "./types";
+import { IOption, IOptionsStepProps } from "./types";
 
 const options: IOption[] = [
   { text: "Right away", icon: "/images/clock.svg" },
@@ -9,14 +10,18 @@ const options: IOption[] = [
   { text: "Already Listed", icon: "/images/schedule.svg" },
 ];
 
-const OptionsStep = () => {
+const OptionsStep = ({ step = Step.First, handleStepChange }: IOptionsStepProps) => {
   return (
     <div className={styles.root}>
       {options.map((option) => (
-        <button className={styles.button} key={option.icon}>
+        <button
+          className={styles.button}
+          key={option.icon}
+          onClick={() => handleStepChange?.(step + 1)}
+        >
           <div className={styles.innerWrapper}>
             <div className={styles.iconWrapper}>
-              <Image src={option.icon} alt="clock" width="24px" height="24px" />
+              <Image src={option.icon} alt="clock" width={24} height={24} />
             </div>
             <h3 className={styles.subtitle}>{option.text}</h3>
           </div>
@@ -24,8 +29,8 @@ const OptionsStep = () => {
             <Image
               src="/images/right-arrow.svg"
               alt="clock"
-              width="13px"
-              height="13px"
+              width={13}
+              height={13}
             />
           </div>
         </button>
