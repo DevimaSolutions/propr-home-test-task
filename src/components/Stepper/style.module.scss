@@ -8,6 +8,7 @@
   background-color: $white;
 
   .infoWrapper {
+    display: none;
     width: 50%;
     min-height: 100%;
     padding: 27px 44px;
@@ -60,7 +61,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 50%;
+    width: 100%;
     padding: 30px 40px;
     background-color: $white;
 
@@ -95,7 +96,7 @@
     }
 
     .stepContent {
-      padding: 20px;
+      padding: 0;
 
       .infoTitle {
         font-weight: 600;
@@ -114,17 +115,17 @@
   }
 }
 
-@include down(md) {
+@include up(md) {
   .root {
     .infoWrapper {
-      display: none;
+      display: block;
     }
 
     .contentWrapper {
-      width: 100%;
+      width: 50%;
 
       .stepContent {
-        padding: 0;
+        padding: 20px;
       }
     }
   }

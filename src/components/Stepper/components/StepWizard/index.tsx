@@ -10,7 +10,7 @@ const StepWizard = ({
   disableNextBtn = false,
   handleStepChange,
 }: IStepWizardProps) => {
-  const { fillWidth, countOfSteps } = useStepWizard({ currentStep });
+  const { fillWidth, countOfSteps, hiddenNextButtonSteps } = useStepWizard({ currentStep });
 
   return (
     <div className={styles.root}>
@@ -29,7 +29,7 @@ const StepWizard = ({
           <div className={styles.stepCounter}>
             step {currentStep}/{countOfSteps}
           </div>
-          {![Step.First].includes(currentStep) && (
+          {!hiddenNextButtonSteps.includes(currentStep) && (
             <button
               className={clsx(
                 styles.button,

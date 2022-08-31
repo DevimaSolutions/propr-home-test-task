@@ -1,8 +1,10 @@
 import { useMemo, useState } from "react";
 import { Step } from "@/enums";
-import { IStepWizard } from "./types";
+import { IStepWizardProps } from "./types";
 
-const useStepWizard = ({ currentStep }: Pick<IStepWizard, "currentStep">) => {
+const useStepWizard = ({ currentStep }: Pick<IStepWizardProps, "currentStep">) => {
+  const hiddenNextButtonSteps = [Step.First];
+
   const [fillWidth, setFillWidth] = useState(0);
 
   const countOfSteps = Object.keys(Step)
@@ -19,7 +21,7 @@ const useStepWizard = ({ currentStep }: Pick<IStepWizard, "currentStep">) => {
     setFillWidth(percentage);
   }, [countOfSteps, currentStep]);
 
-  return { fillWidth, countOfSteps };
+  return { fillWidth, countOfSteps, hiddenNextButtonSteps };
 };
 
 export default useStepWizard;

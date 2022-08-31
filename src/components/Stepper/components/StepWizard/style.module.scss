@@ -97,7 +97,7 @@
     .stepCounter {
       color: $green-light;
       font-weight: 300;
-      margin-right: 30px;
+      margin-right: 10px;
     }
 
     .nextWrap {
@@ -108,11 +108,11 @@
   }
 }
 
-@include down(md) {
+@include up(md) {
   .root {
     .navigationWrapper {
       .stepCounter {
-        margin-right: 10px;
+        margin-right: 30px;
       }
     }
   }

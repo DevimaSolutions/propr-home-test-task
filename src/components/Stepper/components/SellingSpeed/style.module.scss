@@ -2,7 +2,7 @@
 @import "@/styles/config";
 
 .root {
-  margin: 56px 0px 98px 0px;
+  margin: 28px 0px 60px 0px;
 
   .button {
     width: 100%;
@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 17px 12px;
+    padding: 17px 6px;
     background-color: $white;
     cursor: pointer;
 
@@ -22,7 +22,7 @@
 
     &:hover {
       transition: all 0.3s;
-      background-color: rgba(196, 196, 196, 0.2);
+      border: 1px solid $green-light;
     }
 
     .innerWrapper {
@@ -39,9 +39,10 @@
         border-radius: 50%;
       }
       .subtitle {
+        white-space: nowrap;
         margin-left: 18px;
         font-weight: 600;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 23px;
         letter-spacing: 0.05em;
         color: $black;
@@ -58,14 +59,14 @@
   }
 }
 
-@include down(md) {
+@include up(md) {
   .root {
-    margin: 28px 0px 60px 0px;
+    margin: 56px 0px 98px 0px;
     .button {
-      padding: 17px 6px;
+      padding: 17px 12px;
       .innerWrapper {
         .subtitle {
-          font-size: 12px;
+          font-size: 16px;
         }
       }
     }
