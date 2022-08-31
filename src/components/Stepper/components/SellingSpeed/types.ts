@@ -5,4 +5,4 @@ export interface IOption {
   text: string;
   icon: string;
 }
-export type IOptionsStepProps = IStepConfigComponentProps;
+export type ISellingSpeedProps = IStepConfigComponentProps;

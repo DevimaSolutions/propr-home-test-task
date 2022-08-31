@@ -1,7 +1,7 @@
 import Image from "next/image";
 import useStepWizard from "./useStepWizard";
 import styles from "./style.module.scss";
-import { IStepWizard } from "./types";
+import { IStepWizardProps } from "./types";
 import clsx from "clsx";
 import { Step } from "@/enums";
 
@@ -9,7 +9,7 @@ const StepWizard = ({
   currentStep,
   disableNextBtn = false,
   handleStepChange,
-}: IStepWizard) => {
+}: IStepWizardProps) => {
   const { fillWidth, countOfSteps } = useStepWizard({ currentStep });
 
   return (

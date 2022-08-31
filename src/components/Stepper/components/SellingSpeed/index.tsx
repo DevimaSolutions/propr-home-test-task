@@ -1,16 +1,13 @@
-import { Step } from "@/enums";
 import Image from "next/image";
+import { Step } from "@/enums";
+import { ISellingSpeedProps } from "./types";
+import { options } from "./constants";
 import styles from "./style.module.scss";
-import { IOption, IOptionsStepProps } from "./types";
 
-const options: IOption[] = [
-  { text: "Right away", icon: "/images/clock.svg" },
-  { text: "1-3 Months", icon: "/images/new-calendar.svg" },
-  { text: "4+ Months", icon: "/images/calendar.svg" },
-  { text: "Already Listed", icon: "/images/schedule.svg" },
-];
-
-const OptionsStep = ({ step = Step.First, handleStepChange }: IOptionsStepProps) => {
+const SellingSpeed = ({
+  step = Step.First,
+  handleStepChange,
+}: ISellingSpeedProps) => {
   return (
     <div className={styles.root}>
       {options.map((option) => (
@@ -39,4 +36,4 @@ const OptionsStep = ({ step = Step.First, handleStepChange }: IOptionsStepProps)
   );
 };
 
-export default OptionsStep;
+export default SellingSpeed;

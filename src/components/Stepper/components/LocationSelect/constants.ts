@@ -11,7 +11,6 @@ export const staticOptions = [
   { value: "Rua do Viveiro Estoril", label: "Rua do Viveiro Estoril" },
 ];
 
-
 export const selectStyles: StylesConfig = {
   control: (provided, state) => ({
     ...provided,

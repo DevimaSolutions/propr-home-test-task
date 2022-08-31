@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Step } from "@/enums";
-import { StepWizard, LocationSelect, OptionsStep } from "./components";
+import { StepWizard, LocationSelect, SellingSpeed } from "./components";
 import { IStepConfig } from "./types";
 import useStepper from "./useStepper";
 import styles from "./style.module.scss";
@@ -10,7 +10,7 @@ const stepInfo: Record<Step, IStepConfig> = {
   [Step.First]: {
     title: "Let’s start with the selling speed",
     label: "How fast are you planning to sell?",
-    component: OptionsStep,
+    component: SellingSpeed,
   },
   [Step.Second]: {
     title: "Tell us the location please",
