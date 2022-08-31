@@ -12,27 +12,24 @@ const options: IOption[] = [
 const OptionsStep = () => {
   return (
     <div className={styles.root}>
-      <h1 className={styles.title}>How fast are you planning to sell?</h1>
-      {options.map((option) => {
-        return (
-          <button className={styles.button} key={option.icon}>
-            <div className={styles.innerWrapper}>
-              <div className={styles.iconWrapper}>
-                <Image src={option.icon} alt="clock" width="24px" height="24px" />
-              </div>
-              <h3 className={styles.subtitle}>{option.text}</h3>
+      {options.map((option) => (
+        <button className={styles.button} key={option.icon}>
+          <div className={styles.innerWrapper}>
+            <div className={styles.iconWrapper}>
+              <Image src={option.icon} alt="clock" width="24px" height="24px" />
             </div>
-            <div className={styles.arrowWrapper}>
-              <Image
-                src="/images/right-arrow.svg"
-                alt="clock"
-                width="13px"
-                height="13px"
-              />
-            </div>
-          </button>
-        );
-      })}
+            <h3 className={styles.subtitle}>{option.text}</h3>
+          </div>
+          <div className={styles.arrowWrapper}>
+            <Image
+              src="/images/right-arrow.svg"
+              alt="clock"
+              width="13px"
+              height="13px"
+            />
+          </div>
+        </button>
+      ))}
     </div>
   );
 };

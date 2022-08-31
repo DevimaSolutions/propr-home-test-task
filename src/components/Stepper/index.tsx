@@ -5,6 +5,7 @@ import { StepWizard, LocationSelect } from "./components";
 import { IStepConfig } from "./types";
 import useStepper from "./useStepper";
 import styles from "./style.module.scss";
+import OptionsStep from "../OptionsStep";
 
 const stepInfo: Record<Step, IStepConfig> = {
   [Step.First]: {
